@@ -18,12 +18,9 @@ password = ''
 def main():
     rd = RedditDownload(client_id, client_secret, username, password)
 
-    print len(sys.argv)
     if len(sys.argv) <= 2:
         sys.exit("Usage: python upton.py <subreddit> <limit>")
     
-
-
     subreddit = sys.argv[1]
     limit = sys.argv[2]    
     print "Retrieving links.."
