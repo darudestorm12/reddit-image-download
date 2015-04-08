@@ -12,8 +12,8 @@ from Queue import Queue
 
 client_id = ''
 client_secret = ''
-username = ""
-password = ""
+username = ''
+password = ''
 
 def main():
     rd = RedditDownload(client_id, client_secret, username, password)
@@ -49,7 +49,7 @@ class RedditDownload:
     def getToken(self):
         client_auth = requests.auth.HTTPBasicAuth(client_id, client_secret)
         post_data = {"grant_type": "password", "username": self.username, "password": self.password}
-        headers = { "User-Agent": "Upton/0.1 by rickstick19" }
+        headers = { "User-Agent": "rid/0.1 by rickstick19" }
         response = requests.post("https://www.reddit.com/api/v1/access_token", auth=client_auth, data=post_data, headers=headers)
         json_dict = response.json()
         return json_dict['access_token']
@@ -58,7 +58,7 @@ class RedditDownload:
         links = []
         after = None 
         thetoken = "bearer " + token
-        headers = {"Authorization": thetoken, "User-Agent": "Upton/0.1 by rickstick19"}
+        headers = {"Authorization": thetoken, "User-Agent": "rid/0.1 by rickstick19"}
         
         if limit > 100:
             c = math.ceil(float(limit)/100)
