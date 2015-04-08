@@ -3,18 +3,18 @@ Downloads number of images from a subreddit. Uses requests, threading and OAuth2
 
 # requirements
 
-Requests and Requests.auth modules
+Requests, Requests.auth and wget modules
 
 You have to create an application here: https://www.reddit.com/prefs/apps/
 
 # configuration
 
-Open rim.py and change these values at the top to your own values
+Open rid.py and change these values at the top to your own values
 
 client_id = 'yourclientid' 
 client_secret = 'yourclientsecret'
-username = "redditusername"
-password = "redditpassword"
+username = 'redditusername'
+password = 'redditpassword'
 
 # example usage
 
